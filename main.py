@@ -13,7 +13,6 @@ def boardCreation():
         print()
 
 
-# firstUser
 def intro():
     print(f'Welcome to the game player One, please enter your name: ')
     x_user = str(input())
@@ -25,6 +24,27 @@ def intro():
 
     # create the Board after the intro
     boardCreation()
+
+
+
+
+# def validate():
+#     while True:
+#         while board[moveX_x_coordinate] > 2 or board[moveX_x_coordinate] < 0:
+#             print('please pick a x-coordinate playerOne')
+#             moveX_x_coordinate = int(input())
+#
+#         while board[moveX_y_coordinate] > 2 or board[moveX_y_coordinate] < 0:
+#             print('please pick a y-coordinate playerOne')
+#             moveX_y_coordinate = int(input())
+#
+#         print('Your chosen board position is ' + "[" + str(moveX_x_coordinate) + "]" + "[" + str(
+#             moveX_y_coordinate) + "]")
+#
+#         board[moveX_x_coordinate][moveX_y_coordinate] = 'X'
+#
+#         boardCreation()
+
 
 
 def x_move():
@@ -55,12 +75,6 @@ def y_move():
     boardCreation()
 
 
-# TODO
-# later
-# board[0][0] == 'O' and board[0][1] == 'O' and board[0][2] == 'O') or (
-#            board[1][0] == 'O' and board[1][1] == 'O' and board[1][2] == 'O') or (
-#            board[2][0] == 'O' or board[2][1] == 'O' or board[2][2] == 'O') or (
-
 def complete_game():
     if ((board[0][0] == 'X' and board[0][1] == 'X' and board[0][2] == 'X') or
             (board[1][0] == 'X' and board[1][1] == 'X' and board[1][2] == 'X') or
@@ -72,7 +86,7 @@ def complete_game():
 
             (board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X') or
             (board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X')):
-        print(f'player one has won hooray ')
+        print(f'Player One Has Won Hooray! ')
         return True
 
     elif ((board[0][0] == 'O' and board[0][1] == 'O' and board[0][2] == 'O') or
@@ -85,15 +99,16 @@ def complete_game():
 
           (board[0][0] == 'O' and board[1][1] == 'O' and board[2][2] == 'O') or
           (board[0][2] == 'O' and board[1][1] == 'O' and board[2][0] == 'O')):
-        print(f'player two has won hooray')
+        print(f'Player Two Has Won Hooray!')
+        return True
+
+    elif ((board[0][0] != '-' and board[0][1] != '-' and board[0][2] != '-') and
+          (board[1][0] != '-' and board[1][1] != '-' and board[1][2] != '-') and
+          (board[2][0] != '-' and board[2][1] != '-' and board[2][2] != '-')):
+        print(f'No One Has Won the Game')
         return True
 
 
-# def legal_board_moves():
-#
-#     if(board[][])
-
-# playGame
 # add conditions for if board is full or game is complete
 
 # board size
@@ -101,6 +116,7 @@ rows = len(board)
 cols = len(board[0])
 total_size = rows * cols
 
+# play Game
 intro()
 while True:
     x_move()
