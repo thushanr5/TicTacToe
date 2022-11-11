@@ -31,17 +31,13 @@ def intro():
 def x_move():
     print("What is your choice of x-coordinate player One")
     moveX_x_coordinate = int(input())
-
-    # checking is move is valid in the x direction
-    while moveX_x_coordinate > 2 or moveX_x_coordinate < 0:
-        print(f'Please choose another position for the x-coordinate')
-        moveX_x_coordinate = int(input())
-
     print("What is your choice of y-coordinate player One")
     moveX_y_coordinate = int(input())
 
-    # checking is move is valid in the y direction
-    while (moveX_y_coordinate > 2 or moveX_y_coordinate < 0) or board[moveX_x_coordinate][moveX_y_coordinate] == 'O' or board[moveX_x_coordinate][moveX_y_coordinate] == 'X':
+    # checking is move is valid
+    while (moveX_x_coordinate > 2 or moveX_x_coordinate < 0) or (moveX_y_coordinate > 2 or moveX_y_coordinate < 0) or board[moveX_x_coordinate][moveX_y_coordinate] == 'O' or board[moveX_x_coordinate][moveX_y_coordinate] == 'X':
+        print(f'Please choose another position for the x-coordinate')
+        moveX_x_coordinate = int(input())
         print(f'Please choose another position for the y-coordinate')
         moveX_y_coordinate = int(input())
 
@@ -55,17 +51,13 @@ def x_move():
 def y_move():
     print("What is your choice of x-coordinate playerTwo")
     moveY_x_coordinate = int(input())
-
-    # checking is move is valid in the x direction
-    while moveY_x_coordinate > 2 or moveY_x_coordinate < 0:
-        print(f'Please choose another position for the x-coordinate')
-        moveY_x_coordinate = int(input())
-
     print("What is your choice of y-coordinate playerTwo")
     moveY_y_coordinate = int(input())
 
     # checking is move is valid in the y direction
-    while (moveY_y_coordinate > 2 or moveY_y_coordinate < 0) or board[moveY_x_coordinate][moveY_y_coordinate] == 'X' or board[moveY_x_coordinate][moveY_y_coordinate] == 'O':
+    while (moveY_x_coordinate > 2 or moveY_x_coordinate < 0) or (moveY_y_coordinate > 2 or moveY_y_coordinate < 0) or board[moveY_x_coordinate][moveY_y_coordinate] == 'X' or board[moveY_x_coordinate][moveY_y_coordinate] == 'O':
+        print(f'Please choose another position for the x-coordinate')
+        moveY_x_coordinate = int(input())
         print(f'Please choose another position for the y-coordinate')
         moveY_y_coordinate = int(input())
 
