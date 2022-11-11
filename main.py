@@ -40,8 +40,8 @@ def x_move():
     print("What is your choice of y-coordinate player One")
     moveX_y_coordinate = int(input())
 
-    # checking is move is valid in the y direction and move isn't already taken by same or other player
-    while (moveX_y_coordinate > 2 or moveX_y_coordinate < 0) or board[moveX_x_coordinate][moveX_x_coordinate] == 'O' or board[moveX_x_coordinate][moveX_y_coordinate] == 'X':
+    # checking is move is valid in the y direction
+    while (moveX_y_coordinate > 2 or moveX_y_coordinate < 0) or board[moveX_x_coordinate][moveX_y_coordinate] == 'O' or board[moveX_x_coordinate][moveX_y_coordinate] == 'X':
         print(f'Please choose another position for the y-coordinate')
         moveX_y_coordinate = int(input())
 
@@ -64,7 +64,7 @@ def y_move():
     print("What is your choice of y-coordinate playerTwo")
     moveY_y_coordinate = int(input())
 
-    # checking is move is valid in the y direction and move isn't already taken by same or other player
+    # checking is move is valid in the y direction
     while (moveY_y_coordinate > 2 or moveY_y_coordinate < 0) or board[moveY_x_coordinate][moveY_y_coordinate] == 'X' or board[moveY_x_coordinate][moveY_y_coordinate] == 'O':
         print(f'Please choose another position for the y-coordinate')
         moveY_y_coordinate = int(input())
@@ -88,7 +88,7 @@ def complete_game():
 
             (board[0][0] == 'X' and board[1][1] == 'X' and board[2][2] == 'X') or
             (board[0][2] == 'X' and board[1][1] == 'X' and board[2][0] == 'X')):
-        print(f'Player One Has Won Hooray!')
+        print(f'Player One Has Won Hooray! ')
         return True
 
         # all winnable positions -> O-player
